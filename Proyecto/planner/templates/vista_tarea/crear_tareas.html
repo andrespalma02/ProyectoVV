@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Crear Tareas</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Planner</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href='{% url 'index' %}'>Home</a>
+              </li>
+
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    
+      <div class="container">
+        <h2>Creación de una Tarea</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <form>
+                    
+                    <div class="mb-3">
+                        <label for="Input_nombre_tarea" class="form-label">Ingrese el nombre de la tarea</label>
+                        <input type="text" class="form-control" id="Input_nombre_tarea">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input_codigo_tarea" class="form-label">Ingrese el código de la tarea</label>
+                        <input type="text" class="form-control" id="Input_codigo_tarea">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input_descripcion_tarea" class="form-label">Ingrese la descripción de la tarea</label>
+                        <textarea class="form-control" id="Input_descripcion_tarea" rows="3"></textarea>
+                    </div>
+                                
+                    <div class="mb-3">
+                        <label for="Input_descripcion_tarea" class="form-label">Ingrese la prioridad de la tarea</label>
+                        <select class="form-control" id="select">
+                            <option value="">Choose...</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                        </select>
+                    </div>
+                                                  
+                    <div class="mb-3">
+                        <label for="Input_fecha_inicio_tarea" class="form-label">Ingrese la fecha de inicio de la tarea</label>
+                        <input type="date" class="form-control" id="Input_fecha_inicio_tarea">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input_fecha_fin_tarea" class="form-label">Ingrese la fecha de fin de la tarea</label>
+                        <input type="date" class="form-control" id="Input_fecha_fin_tarea">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input_progreso_tarea" class="form-label">Ingrese el progreso de la tarea</label>
+                        <input type="text" class="form-control" id="Input_progreso_tarea">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Input_descripcion_tarea" class="form-label">Ingrese colaboradores a la tarea</label>
+                        <select class="form-control" multiple aria-label="size 3 select example">
+                            <option value="1">Andres Palma</option>
+                            <option value="2">Steven Rivera</option>
+                            <option value="3">Marco Santana</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Crear Tarea</button>
+                  </form>
+            </div>
+          </div>
+      </div>
+
+    
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>

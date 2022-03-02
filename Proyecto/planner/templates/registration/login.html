@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<section class="vh-100" style="background-color: #508bfc;">
+    {% block content %}
+
+
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+
+    <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <h3 class="mb-5">Login</h3>
+
+            <div class="form-outline mb-4">
+              <input type="text" name="username" autocomplete="username" required id="id_username" class="form-control form-control-lg" />
+              <label class="form-label" for="typeEmailX-2">Nombre de usuario</label>
+            </div>
+
+            <div class="form-outline mb-4">
+              <input type="password" name="password" autocomplete="current-password" required id="id_password" class="form-control form-control-lg" />
+              <label class="form-label" for="typePasswordX-2">Contraseña</label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-start mb-4">
+                <p><a href="{% url 'password_reset' %}">Perdió su Contraseña?</a></p>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit" value="login">Ingresar</button>
+            <hr class="my-4">
+              {% if form.errors %}
+                  <label class="form-label" for="typePasswordX-2">
+                    Su nombre de usuario y contraseña no coinciden. Intente de nuevo.</label>
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+</section>
+
+
+
+
+
+
+
+</html>

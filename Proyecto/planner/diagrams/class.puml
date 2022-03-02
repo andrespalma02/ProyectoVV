@@ -1,0 +1,35 @@
+@startuml
+class Proyecto {
+ nombre_proyecto : String
+ descripcion_proyecto : String
+ fecha_inicio : Date
+ fecha_fin : Date
+ lista_tareas : List<Tarea>[]
+ obtener_num_tareas_totales()
+ obtener_num_tareas_finalizadas()
+ obtener_num_tareas_en_progreso()
+ obtener_num_tareas_en_cola()
+ tiene_tareas()
+ administrador:Colaborador
+}
+class Tarea {
+ nombre_tarea : String
+ codigo_tarea : String
+ descripcion_tarea : String
+ prioridad_tarea : String
+ fecha_inicio : Date
+ fecha_fin : Date
+ estado_tarea: String
+ colaboradores: List<Colaborador>[]
+}
+class Colaborador{
+tareas_asignadas: List<Tarea>[]
+proyectos_asignados: List<Proyecto>[]
+}
+Proyecto *-- Tarea
+User<|--Colaborador
+Proyecto--Colaborador
+Tarea --Colaborador
+
+
+@enduml

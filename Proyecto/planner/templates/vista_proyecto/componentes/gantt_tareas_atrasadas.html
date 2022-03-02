@@ -1,0 +1,22 @@
+<div class="col-md-8">
+    <h5>Existen las siguientes tareas que van a retrasarse, prestar atención</h5>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID Tarea</th>
+                        <th>Nombre Tarea</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for tarea in tareas_por_retrasarse %}
+                            <tr>
+                                <td>{{ tarea.id }}</td>
+                                <td>{{ tarea.nombre_tarea }} </td>
+                            </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+</div>
+
